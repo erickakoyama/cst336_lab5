@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+
+  <body>
+
+    <main>
+      <h1>Cool Images</h1>
+
+      <form action="/search">
+        <input placeholder="Type Keyword" type="text" name="keyword" />
+        <button>Search</button>
+      </form>
+      
+      <img src='<%= imageUrl %>' width="200" height="200" />
+    </main>
+
+    <%- include('partials/footer.ejs') %>
+  </body>
+
+  </html>
