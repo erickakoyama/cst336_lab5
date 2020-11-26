@@ -10,7 +10,10 @@
         <button>Search</button>
       </form>
       
-      <img src='<%= imageUrl %>' width="200" height="200" />
+      <% imageUrlArray.forEach(url => { %>
+          <img src='<%= url %>' width="200" height="200" />
+        <% }); %>
+      
     </main>
 
     <%- include('partials/footer.ejs') %>
