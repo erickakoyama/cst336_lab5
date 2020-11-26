@@ -13,12 +13,13 @@
       <% imageUrlArray.forEach((url, i) => { %>
         <%- (i % 3 == 0)?'<br>':'' %>
         <img src='<%= url %>' width="200" height="200" />
-        <img src='img/favorite.png' width='20' />
+        <img class="favoriteIcon" src='img/favorite.png' width='20' />
       <% }); %>
       
     </main>
 
     <%- include('partials/footer.ejs') %>
+    <script src='js/functions.js'></script>
   </body>
 
   </html>
