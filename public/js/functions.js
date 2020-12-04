@@ -11,7 +11,7 @@ Array.from(favoriteIconNodes).map(node => {
     const urlParams = new URLSearchParams(queryString);
     const keyword = urlParams.get("keyword");
 
-    const imageUrl = $(this).prev().attr("src");
+    const imageUrl = node.closest('img').getAttribute("src");
 
 
     if (node.getAttribute('src') === 'img/favorite.png') {
