@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
+const pool = require('./dbPool.js');
+
+require('dotenv').config(); // process.env variables
 
 // app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
@@ -26,6 +29,28 @@ app.get('/search', async(req, res) => {
 
   res.render('results', { imageUrl: bgImage, imageUrlArray });
 });
+
+app.get("/api/updateFavorites", function(req, res) {
+  let sql;
+  let sqlParams;
+  switch (req.query.action) {
+    case "add":
+      sql = "INSERT INTO favorites (imageUrl, keyword) VALUES (?,?)";
+      sqlParams = [req.query.imageUrl, req.query.keyword];
+      break;
+    case "delete":
+      sql = "DELETE FROM favorites WHERE imageUrl = ?";
+      sqlParams = [req.query.imageUrl];
+      break;
+  } //switch
+  pool.query(sql, sqlParams, function(err, rows, fields) {
+    if (err) throw err;
+    console.log(rows);
+    res.send(rows.affectedRows.toString());
+  });
+
+}); //api/updateFavorites
+
 
 // starting server
 app.listen(process.env.PORT, process.env.IP, () => {
