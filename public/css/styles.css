@@ -1,5 +1,24 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
 main {
+  flex-grow: 1;
+}
+
+main#favorite-page {
+  width: 50%;
+  margin: 0 auto;
+}
+
+main#result-page,
+main#home-page {
   background-color: rgba(0, 0, 0, 0.75);
+  flex-grow: 1;
   width: 50%;
   margin: 100px auto;
   border-radius: 25px;
@@ -13,12 +32,10 @@ h1 {
 
 input,
 button {
-  font-size: 1.3em
+  font-size: 1em
 }
 
 .img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
   margin-bottom: 8px;
 }
@@ -27,7 +44,7 @@ button {
 #favorites {
   background-color: rgba(250, 250, 250, 0.50);
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 20px;
   grid-column-gap: 20px;
   padding: 15px;
@@ -39,13 +56,11 @@ button {
 .link {
   background-color: rgba(250, 250, 250, 0.75);
   color: #CE4108;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 #favContainer {
   background-color: rgba(0, 0, 0, 0.75);
-  width: 75%;
-  margin: 0 auto;
   border-radius: 25px;
 }
 
@@ -56,4 +71,13 @@ button {
   margin: 5px;
   padding-left: 5px;
   padding-right: 5px
+}
+
+footer {
+  font-weight: bold;
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .8);
+  border-top: .05rem solid #e5e5e5;
 }
