@@ -2,7 +2,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
-  height: 100%;
   margin: 0;
 }
 
