@@ -8,6 +8,7 @@
       <form action="/search">
         <input placeholder="Type Keyword" type="text" name="keyword" />
         <button>Search</button>
+        <br/><a href="/getKeywords">See Favorites</a>
       </form>
       
       <% imageUrlArray.forEach((url, i) => { %>
@@ -19,7 +20,3 @@
     </main>
 
     <%- include('partials/footer.ejs') %>
-    <script src='js/functions.js'></script>
-  </body>
-
-  </html>

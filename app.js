@@ -1,11 +1,10 @@
+require('dotenv').config(); // process.env variables
+
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
 const pool = require('./dbPool.js');
 
-require('dotenv').config(); // process.env variables
-
-// app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
@@ -50,6 +49,28 @@ app.get("/api/updateFavorites", function(req, res) {
   });
 
 }); //api/updateFavorites
+
+app.get("/getKeywords", function(req, res) {
+  let sql = "SELECT DISTINCT keyword FROM favorites ORDER BY keyword";
+  let imageUrl = ["img/favorite.png"];
+  pool.query(sql, function(err, rows, fields) {
+    if (err) throw err;
+    res.render("favorites", { "imageUrl": imageUrl, "rows": rows });
+  });
+}); //getKeywords
+
+app.get("/api/getFavorites", function(req, res) {
+  let sql = "SELECT imageURL FROM favorites WHERE keyword = ?";
+  let sqlParams = [req.query.keyword];
+  pool.query(sql, sqlParams, function(err, rows, fields) {
+    if (err) throw err;
+    console.log(rows);
+    res.send(rows);
+  });
+
+}); //api/getFavorites
+
+
 
 
 // starting server

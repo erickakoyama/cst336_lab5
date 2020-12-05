@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs') %>
+
+   <a href="/"> Back to Search </a>
+    
+   <h1>Favorite Pics</h1>
+    
+   <% 
+       //displaying five keywords per line
+      rows.forEach(function(row, i){ %>
+       
+        <a class="keywordLink" href="#"><%= row["keyword"] %></a>
+    
+        <%- ((i+1) % 6 == 0)?'<br><br>':'' %>
+    
+    <% });%>
+    
+    <div id="favorites"></div>
+    
+    <input type="hidden" id="keywordSelected">
+
+<%- include('partials/footer.ejs') %>
