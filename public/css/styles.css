@@ -38,6 +38,7 @@ button {
 .img {
   border-radius: 10px;
   margin-bottom: 8px;
+  width: 100%;
 }
 
 #resultsContainer,
