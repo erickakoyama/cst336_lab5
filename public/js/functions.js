@@ -50,8 +50,8 @@ $(document).ready(() => {
 
 
     data.forEach(function(row) {
-      htmlString += "<img class='image' src='" + row.imageURL + "' width='200' height='200'>";
-      htmlString += "<img class='favoriteIcon' src='img/favorite_on.png' width='20'>";
+      htmlString += "<div><img class='img' src='" + row.imageURL + "' width='200' height='200'>";
+      htmlString += "<img class='favoriteIcon' src='img/favorite_on.png' width='20'></div>";
     });
 
 

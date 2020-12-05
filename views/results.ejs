@@ -8,14 +8,18 @@
       <form action="/search">
         <input placeholder="Type Keyword" type="text" name="keyword" />
         <button>Search</button>
-        <br/><a href="/getKeywords">See Favorites</a>
+        <br/><a id="favLink" href="/getKeywords">See Favorites</a>
       </form>
+      <hr>
       
-      <% imageUrlArray.forEach((url, i) => { %>
-        <%- (i % 3 == 0)?'<br>':'' %>
-        <img src='<%= url %>' width="200" height="200" />
-        <img class="favoriteIcon" src='img/favorite.png' width='20' />
+      <div id="resultsContainer">
+        <% imageUrlArray.forEach((url, i) => { %>
+        <div class="result-item">
+          <img class="img" src='<%= url %>' width="200" height="200" />
+          <img class="favoriteIcon" src='img/favorite.png' width='20' />
+        </div>
       <% }); %>
+      </div>
       
     </main>
 

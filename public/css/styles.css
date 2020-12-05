@@ -1,0 +1,59 @@
+main {
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 50%;
+  margin: 100px auto;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 2.5em;
+}
+
+h1 {
+  color: silver;
+}
+
+input,
+button {
+  font-size: 1.3em
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+#resultsContainer,
+#favorites {
+  background-color: rgba(250, 250, 250, 0.50);
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  padding: 15px;
+  border-radius: 25px;
+  margin: 0 auto;
+}
+
+#favLink,
+.link {
+  background-color: rgba(250, 250, 250, 0.75);
+  color: #CE4108;
+  font-size: 1.3em;
+}
+
+#favContainer {
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.keywordLink {
+  background-color: rgba(250, 250, 250, 0.75);
+  color: #CE4108;
+  font-size: 1.5em;
+  margin: 5px;
+  padding-left: 5px;
+  padding-right: 5px
+}
