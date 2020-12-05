@@ -44,7 +44,6 @@ app.get("/api/updateFavorites", function(req, res) {
   } //switch
   pool.query(sql, sqlParams, function(err, rows, fields) {
     if (err) throw err;
-    console.log(rows);
     res.send(rows.affectedRows.toString());
   });
 
@@ -64,7 +63,6 @@ app.get("/api/getFavorites", function(req, res) {
   let sqlParams = [req.query.keyword];
   pool.query(sql, sqlParams, function(err, rows, fields) {
     if (err) throw err;
-    console.log(rows);
     res.send(rows);
   });
 
